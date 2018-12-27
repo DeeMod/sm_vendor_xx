@@ -1,0 +1,23 @@
+各ROM均有不同，以下建议手动修改，请注意备份！！
+xx为各ROM对应的名称，具体请自行修改。
+
+----------------001----------------
+#####config/common.mk  内添加：#####
+ PRODUCT_PACKAGES += \
+     PhoneLocationProvider
+ ----------------002----------------
+ #####config/common.mk  内添加：#####
+ # Use all private libraries
+ifeq ($(SUDA_CPU_ABI),arm64-v8a)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*.so,vendor/xx/prebuilt/suda/lib/$(SUDA_CPU_ABI),system/lib64) \
+    $(call find-copy-subdir-files,*.so,vendor/xx/prebuilt/suda/lib/armeabi-v7a/,system/lib)
+else
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*.so,vendor/xx/prebuilt/suda/lib/$(SUDA_CPU_ABI),system/lib)
+endif
+  ----------------003----------------
+ #####config/telephony.mk  内添加：#####
+ # Phonelocation!
+PRODUCT_COPY_FILES +=  \
+    vendor/xx/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
