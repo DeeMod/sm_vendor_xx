@@ -1,13 +1,13 @@
-¸÷ROM¾ùÓĞ²»Í¬£¬ÒÔÏÂ½¨ÒéÊÖ¶¯ĞŞ¸Ä£¬Çë×¢Òâ±¸·İ£¡£¡
-xxÎª¸÷ROM¶ÔÓ¦µÄÃû³Æ£¬¾ßÌåÇë×ÔĞĞĞŞ¸Ä¡£
+å„ROMå‡æœ‰ä¸åŒï¼Œä»¥ä¸‹å»ºè®®æ‰‹åŠ¨ä¿®æ”¹ï¼Œè¯·æ³¨æ„å¤‡ä»½ï¼ï¼ï¼
+xxä¸ºå„ROMå¯¹åº”çš„åç§°ï¼Œå…·ä½“è‡ªè¡Œä¿®æ”¹ã€‚
 
 ----------------001----------------
-#####config/common.mk  ÄÚÌí¼Ó£º#####
+#####config/common.mk æ·»åŠ ï¼š#####
  PRODUCT_PACKAGES += \
      PhoneLocationProvider
  ----------------002----------------
- #####config/common.mk  ÄÚÌí¼Ó£º#####
- # Use all private libraries
+#####config/common.mk æ·»åŠ ï¼š#####
+# Use all private libraries
 ifeq ($(SUDA_CPU_ABI),arm64-v8a)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.so,vendor/xx/prebuilt/suda/lib/$(SUDA_CPU_ABI),system/lib64) \
@@ -17,23 +17,23 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.so,vendor/xx/prebuilt/suda/lib/$(SUDA_CPU_ABI),system/lib)
 endif
   ----------------003----------------
- #####config/telephony.mk  ÄÚÌí¼Ó£º#####
- # Phonelocation!
+#####config/telephony.mk æ·»åŠ ï¼š#####
+# Phonelocation!
 PRODUCT_COPY_FILES +=  \
     vendor/xx/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
     
     
-ĞÂÔö¶ÔbuildÎÄ¼ş¼ĞÄÚµÄĞŞ¸Ä£¨±ØĞë£©£º
+å¯¹buildæ–‡ä»¶å¤¹å†…æ–‡ä»¶çš„ä¿®æ”¹ï¼š
 ----------------001----------------
-#####core/pathmap.mk ÄÚÌí¼Ó£º#####
+#####core/pathmap.mk æ·»åŠ ï¼š#####
 	    suda \
-Àı×Ó£º²éÕÒ¡°media/mca/filterpacks \¡±²¢ÔÚÏÂÃæÌí¼Ó
+ä¾‹ï¼šæŸ¥æ‰¾  media/mca/filterpacks \  æ¢è¡Œæ·»åŠ 
 ----------------002----------------
-#####envsetup.sh ÄÚÌí¼Ó£º#####
+#####envsetup.sh æ·»åŠ ï¼š#####
     export SUDA_CPU_ABI=$(get_build_var TARGET_CPU_ABI)
-Àı×Ó£º²éÕÒ¡°needed for building linux on MacOS¡°²¢ÔÚÉÏÃæÌí¼Ó
+ä¾‹ï¼šæŸ¥æ‰¾  needed for building linux on MacOS åœ¨å‰ä¸€è¡Œæ¢è¡Œæ·»åŠ 
 ----------------003----------------
-#####target/product/base.mkÄÚÌí¼Ó£º#####
+#####target/product/base.mk æ·»åŠ ï¼š#####
     libsudautils \
     libsuda-phoneloc-jni \
-Àı×Ó£º²éÕÒ¡°libskia \¡°²¢ÔÚÏÂÃæÌí¼Ó
+ä¾‹ï¼šæŸ¥æ‰¾  libskia \  æ¢è¡Œæ·»åŠ 
